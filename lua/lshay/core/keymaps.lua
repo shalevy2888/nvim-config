@@ -40,12 +40,6 @@ keymap.set("x", "J", ":move '<+1<CR>gv-gv")
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 
--- telescope git commands (not on youtube nvim video)
-keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
-
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
@@ -58,15 +52,27 @@ end
 
 -- Telescope Find Option
 wk.register({
-	f = {
-		name = "find", -- optional group name
-		f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
-		s = { "<cmd>Telescope live_grep<cr>", "Find in Working Dir" },
-		c = { "<cmd>Telescope grep_string<cr>", "Find cur_string in Working Dir" },
-		b = { "<cmd>Telescope buffers<cr>", "List open buffers" },
-		h = { "<cmd>Telescope help_tags<cr>", "List available help tags" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" }, --, noremap=false, buffer = 123 }, -- additional options for creating the keymap
-	},
+  f = {
+    name = "find", -- optional group name
+    f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
+    s = { "<cmd>Telescope live_grep<cr>", "Find in Working Dir" },
+    c = { "<cmd>Telescope grep_string<cr>", "Find cur_string in Working Dir" },
+    b = { "<cmd>Telescope buffers<cr>", "List open buffers" },
+    h = { "<cmd>Telescope help_tags<cr>", "List available help tags" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File"}, --, noremap=false, buffer = 123 }, -- additional options for creating the keymap
+  },
+}, { prefix = "<leader>" })
+
+-- Telescope Git
+wk.register({
+  g = {
+    name = "Telescope Git", -- optional group name
+    c = { "<cmd>Telescope git_commits<cr>", "Commits"}, -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+    uc = { "<cmd>Telescope git_bcommits<cr>", "Commits for current file"}, -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+    b = { "<cmd>Telescope git_branches<cr>", "Branches"}, -- list git branches (use <cr> to checkout) ["gb" for git branch]
+    s = { "<cmd>Telescope git_status<cr>", "Status"}, -- list current changes per file with diff preview ["gs" for git status]
+    f = { "<cmd>Telescope git_files<cr>", "Status"}, 
+  },
 }, { prefix = "<leader>" })
 
 -- vimspector debug keymaps

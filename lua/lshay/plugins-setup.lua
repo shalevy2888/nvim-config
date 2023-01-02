@@ -136,6 +136,9 @@ return packer.startup(function(use)
 	-- rainbow parentheses
 	use({ "p00f/nvim-ts-rainbow" })
 
+  -- git integration
+    use 'tpope/vim-fugitive'
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
