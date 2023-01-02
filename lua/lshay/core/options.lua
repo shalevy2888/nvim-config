@@ -11,7 +11,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- mouse
-opt.mouse = 'a'
+opt.mouse = "a"
 opt.mousemoveevent = true
 
 -- line wrapping
@@ -26,7 +26,7 @@ opt.cursorline = true
 
 -- appearance
 opt.termguicolors = true
-opt.background = "dark"
+opt.background = "light"
 opt.signcolumn = "yes"
 
 -- backspace
@@ -47,4 +47,3 @@ opt.list = true
 
 -- timeoutlen for which-key
 opt.timeoutlen = 500
-
