@@ -134,6 +134,9 @@ return packer.startup(function(use)
   -- which-key
   use {'folke/which-key.nvim'}
 
+  -- git integration
+  use 'tpope/vim-fugitive'
+
   if packer_bootstrap then
       require("packer").sync()
   end
