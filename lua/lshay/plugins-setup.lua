@@ -136,8 +136,23 @@ return packer.startup(function(use)
 	-- rainbow parentheses
 	use({ "p00f/nvim-ts-rainbow" })
 
-  -- git integration
-    use 'tpope/vim-fugitive'
+	-- git integration
+	use("tpope/vim-fugitive")
+
+	-- UI Dresser
+	use({
+		"stevearc/dressing.nvim",
+		event = "BufReadPre",
+		config = function()
+			require("dressing").setup({
+				input = { relative = "editor" },
+				select = {
+					backend = { "telescope", "fzf", "builtin" },
+				},
+			})
+		end,
+		disable = false,
+	})
 
 
     -- Below are personal plugins:
