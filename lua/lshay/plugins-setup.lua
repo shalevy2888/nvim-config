@@ -139,6 +139,11 @@ return packer.startup(function(use)
   -- git integration
     use 'tpope/vim-fugitive'
 
+
+    -- Below are personal plugins:
+    use '~/Documents/dev/nvim/case-style.nvim/'
+
+    -- Packer Bootstrap
 	if packer_bootstrap then
 		require("packer").sync()
 	end
