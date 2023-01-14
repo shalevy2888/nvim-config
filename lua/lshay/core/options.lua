@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+pcall(vim.cmd, "autocmd TermOpen * startinsert")
+pcall(vim.cmd, "autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE")
 -- line numbers
 opt.relativenumber = true
 opt.number = true
