@@ -33,6 +33,9 @@ keymap.set("v", ">", ">gv")
 keymap.set("x", "K", ":move '<-2<CR>gv-gv")
 keymap.set("x", "J", ":move '<+1<CR>gv-gv")
 
+-- open terminal:
+keymap.set("n", "<C-[>", "<C-w>s:term<CR>")
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
@@ -108,6 +111,8 @@ wk.register({
 		e = { "<C-w>=", "Equal Split" }, -- make split windows equal width & height
 		x = { ":close<CR>", "Close Split" }, -- close current split window
 		m = { ":MaximizerToggle<CR>", "Maximize" }, -- toggle split window maximization
+        ["+"] = {":exe 'resize ' . (winheight(0) * 6/5)<CR>", "+ Resize" }, -- increase the size of the split
+        ['-'] = {":exe 'resize ' . (winheight(0) * 4/5)<CR>", "- Resize" }, -- decrease the size of the split
 	},
 }, { prefix = "<leader>" })
 
