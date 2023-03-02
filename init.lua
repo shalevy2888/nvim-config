@@ -16,5 +16,7 @@ require("lshay.plugins.treesitter")
 require("lshay.plugins.gitsigns")
 require("lshay.plugins.neo-tree")
 require("lshay.plugins.bufferline")
--- require("lshay.plugins.vim-which-key")
 require("lshay.core.globals")
+
+
+-- require("lshay.plugins.vim-which-key")
