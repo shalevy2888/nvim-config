@@ -146,7 +146,7 @@ require("lazy").setup({
     enable = true,
   },
 
-
   -- Below are personal plugins:
   { dir = '~/Documents/dev/nvim/case-style.nvim/' },
 })
+
